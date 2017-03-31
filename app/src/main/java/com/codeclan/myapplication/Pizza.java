@@ -7,6 +7,13 @@ public class Pizza {
     public int price;
     public boolean bogof;
 
+    public Pizza(int price, boolean bogof) {
+
+        this.price = price;
+        this.bogof = bogof;
+    }
+
+
     public int getPrice() {
         return price;
     }
@@ -23,12 +30,8 @@ public class Pizza {
         this.bogof = bogof;
     }
 
-    public Pizza(int price, boolean bogof){
-
-        this.price = price;
-        this.bogof = bogof;
 
 
 
-    }
+
 }
