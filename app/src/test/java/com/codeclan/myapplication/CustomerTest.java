@@ -1,5 +1,6 @@
 package com.codeclan.myapplication;
 
 
-public class Basket {
+
+public class CustomerTest {
 }
