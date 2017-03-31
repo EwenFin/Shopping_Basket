@@ -27,10 +27,9 @@ public class Checkout {
         for(int i = 0; i < shopping.size(); i++) {
             total = total + shopping.get(i).getPrice();
         }
+        if(total >= 2000){
+            total = total - (total / 10);
+        }
         return total;
-
-
-
-
     }
 }

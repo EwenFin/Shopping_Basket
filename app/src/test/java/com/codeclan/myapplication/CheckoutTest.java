@@ -56,6 +56,18 @@ public class CheckoutTest {
         assertEquals(639, checkout.getTotalCost());
     }
 
+    @Test
+    public void test10PercentDiscount(){
+        basket.basketArray.add(chocolate);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(milk);
+        basket.basketArray.add(beer);
+        basket.basketArray.add(itemA);
+        checkout = new Checkout(customer1, basket);
+        assertEquals(2194, checkout.getTotalCost());
+
+    }
+
 
 
 }
