@@ -7,6 +7,14 @@ in an interface seemed like a better solution
   */
 
 
+import java.util.ArrayList;
+
 public class Basket {
+
+    ArrayList<Purchasables> basketArray;
+
+    public Basket(){
+        this.basketArray = new ArrayList<Purchasables>();
+    }
 
 }

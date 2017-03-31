@@ -2,7 +2,7 @@ package com.codeclan.myapplication;
 
 
 
-public class Pizza {
+public class Pizza implements Purchasables{
 
     public int price;
     public boolean bogof;
