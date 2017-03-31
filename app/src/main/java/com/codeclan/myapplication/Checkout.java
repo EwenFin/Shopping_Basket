@@ -4,4 +4,9 @@ package com.codeclan.myapplication;
  creating some kind of "Smart Basket" class but that seemed to violate Single Responsibility */
 
 public class Checkout {
+
+    public Checkout(Customer customer, Basket basket){
+
+
+    }
 }
