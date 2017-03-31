@@ -1,8 +1,34 @@
 package com.codeclan.myapplication;
 
-/**
- * Created by user on 31/03/2017.
- */
+
 
 public class Pizza {
+
+    public int price;
+    public boolean bogof;
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public boolean isBogof() {
+        return bogof;
+    }
+
+    public void setBogof(boolean bogof) {
+        this.bogof = bogof;
+    }
+
+    public Pizza(int price, boolean bogof){
+
+        this.price = price;
+        this.bogof = bogof;
+
+
+
+    }
 }
