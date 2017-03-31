@@ -4,11 +4,11 @@ package com.codeclan.myapplication;
 public class Customer {
 
     public String name;
-    public boolean loyalty_card;
+    public boolean loyaltyCard;
 
     public Customer(String name){
         this.name = name;
-        this.loyalty_card = false;
+        this.loyaltyCard = false;
     }
 
     public String getName() {
@@ -19,11 +19,11 @@ public class Customer {
         this.name = name;
     }
 
-    public boolean hasLoyalty_card() {
-        return loyalty_card;
+    public boolean hasLoyaltyCard() {
+        return loyaltyCard;
     }
 
-    public void setLoyalty_card(boolean loyalty_card) {
-        this.loyalty_card = loyalty_card;
+    public void setLoyaltyCard(boolean loyalty_card) {
+        this.loyaltyCard = loyalty_card;
     }
 }

@@ -25,7 +25,13 @@ public class CustomerTest {
 
     @Test
     public void testStartWithoutLoyaltyCard(){
-        assertEquals(false, customer1.hasLoyalty_card());
+        assertEquals(false, customer1.hasLoyaltyCard());
+    }
+
+    @Test
+    public void testCanAddLoyaltyCard(){
+        customer1.setLoyaltyCard(true);
+        assertEquals(true, customer1.hasLoyaltyCard());
     }
 
 
