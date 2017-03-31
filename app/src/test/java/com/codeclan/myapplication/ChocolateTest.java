@@ -15,7 +15,7 @@ public class ChocolateTest {
     }
 
     @Test
-    public void testMilkPrice(){
+    public void testChocolatePrice(){
         assertEquals(100, chocolate.getPrice());
     }
 
