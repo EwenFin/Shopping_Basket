@@ -33,16 +33,26 @@ public class CheckoutTest {
         beer = new Beer(699, false);
         customer1 = new Customer("Ewen");
         customer2 = new Customer("Bob");
-        checkout = new Checkout(customer1, basket);
+
     }
 
     //total 2437
+
+    @Test
+    public void testBasketBecomesShopping(){
+        basket.basketArray.add(chocolate);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(milk);
+        checkout = new Checkout(customer1, basket);
+        assertEquals(3, checkout.getShopping().size());
+    }
 
     @Test
     public void testTotalBasketValueNoDiscounts(){
         basket.basketArray.add(chocolate);
         basket.basketArray.add(pepperoniPizza);
         basket.basketArray.add(milk);
+        checkout = new Checkout(customer1, basket);
         assertEquals(639, checkout.getTotalCost());
     }
 
