@@ -43,7 +43,7 @@ public class CheckoutTest {
         basket.basketArray.add(chocolate);
         basket.basketArray.add(pepperoniPizza);
         basket.basketArray.add(milk);
-        assegit rtEquals(639, checkout.getTotalCost());
+        assertEquals(639, checkout.getTotalCost());
     }
 
 
