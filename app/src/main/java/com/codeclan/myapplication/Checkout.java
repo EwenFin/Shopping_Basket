@@ -12,10 +12,12 @@ import java.util.Set;
 public class Checkout {
     int total;
     ArrayList<Purchasables> shopping;
+    Customer customer;
 
     public Checkout(Customer customer, Basket basket){
         this.total = 0;
         this.shopping = basket.basketArray;
+        this.customer = customer;
     }
 
     public void setTotal(int total) {
@@ -54,12 +56,14 @@ public class Checkout {
         int total = 0;
         for(int i = 0; i < shopping.size(); i++) {
             total = total + shopping.get(i).getPrice();
-
-
         }
         total = total - getBogofDiscount();
         if(total >= 2000){
             total = total - (total / 10);
+        }
+        if(customer.hasLoyaltyCard()){
+            total = total * 98 / 100;
+
         }
         return total;
     }

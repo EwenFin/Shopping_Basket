@@ -118,6 +118,20 @@ public class CheckoutTest {
 
     }
 
+    @Test
+    public void testAllDiscounts() {
+        basket.basketArray.add(chocolate);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(milk);
+        basket.basketArray.add(beer);
+        basket.basketArray.add(itemA);
+        customer1.setLoyaltyCard(true);
+        checkout = new Checkout(customer1, basket);
+        assertEquals(2547, checkout.getTotalCost());
+    }
+
 
 
 }
