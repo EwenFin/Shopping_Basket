@@ -34,6 +34,7 @@ public class CheckoutTest {
         customer1 = new Customer("Ewen");
         customer2 = new Customer("Bob");
 
+
     }
 
     //total 2437
@@ -66,6 +67,39 @@ public class CheckoutTest {
         checkout = new Checkout(customer1, basket);
         assertEquals(2194, checkout.getTotalCost());
 
+    }
+
+//    @Test
+//    public void testCountFreeItems(){
+//        basket.basketArray.add(chocolate);
+//        basket.basketArray.add(pepperoniPizza);
+//        basket.basketArray.add(pepperoniPizza);
+//        checkout = new Checkout(customer1, basket);
+//        assertEquals(1, checkout.getBogofDiscount());
+//    }
+
+    @Test
+    public void testBogofDisount() {
+        basket.basketArray.clear();
+        basket.basketArray.add(chocolate);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        checkout = new Checkout(customer1, basket);
+        assertEquals(450, checkout.getBogofDiscount());
+    }
+
+
+    @Test
+    public void testBogof3items() {
+        basket.basketArray.add(chocolate);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(milk);
+        basket.basketArray.add(beer);
+        basket.basketArray.add(itemA);
+        checkout = new Checkout(customer1, basket);
+        assertEquals(2598, checkout.getTotalCost());
     }
 
 
