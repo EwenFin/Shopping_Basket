@@ -5,6 +5,7 @@ package com.codeclan.myapplication;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,17 +30,23 @@ public class Checkout {
     public int getBogofDiscount(){
         int discount = 0;
         int numberOfFreeItems = 0;
-        Set<Purchasables> shoppingSet = new HashSet<Purchasables>(shopping);
-        for(Purchasables shoppingItems: shoppingSet ) {
-
-            if (shoppingItems.isBogof())
-
-                numberOfFreeItems = numberOfFreeItems + (Collections.frequency(shopping, shoppingItems)/2);
-                discount = discount  + (numberOfFreeItems * shoppingItems.getPrice());
+        int newDiscount = 0;
+        HashMap<Purchasables, Integer> shoppingMap = new HashMap<Purchasables, Integer>();
+        for(Purchasables items: shopping ) {
+            Integer count = shoppingMap.get(items);
+            shoppingMap.put(items, (count == null) ? 1 : count + 1);
+        }
+        for(Purchasables key : shoppingMap.keySet()){
+            if(key.isBogof()){
+                numberOfFreeItems = numberOfFreeItems + shoppingMap.get(key)/2;
+                discount = discount + numberOfFreeItems * key.getPrice();
+                newDiscount = newDiscount + discount;
+                discount = 0;
+                numberOfFreeItems = 0;
             }
+        }
 
-
-        return discount;
+        return newDiscount;
     }
 
 

@@ -99,7 +99,23 @@ public class CheckoutTest {
         basket.basketArray.add(beer);
         basket.basketArray.add(itemA);
         checkout = new Checkout(customer1, basket);
-        assertEquals(2598, checkout.getTotalCost());
+        assertEquals(2599, checkout.getTotalCost());
+    }
+
+    @Test
+    public void testBogof5items() {
+        basket.basketArray.add(chocolate);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(pepperoniPizza);
+        basket.basketArray.add(milk);
+        basket.basketArray.add(beer);
+        basket.basketArray.add(itemA);
+        checkout = new Checkout(customer1, basket);
+        assertEquals(3004, checkout.getTotalCost());
+
     }
 
 
