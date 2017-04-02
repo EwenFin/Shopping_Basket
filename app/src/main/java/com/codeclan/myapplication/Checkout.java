@@ -4,10 +4,7 @@ package com.codeclan.myapplication;
  creating some kind of "Smart Basket" class but that seemed to violate Single Responsibility */
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Checkout {
     int total;
